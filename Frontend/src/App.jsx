@@ -16,6 +16,7 @@ import Consultation from "./pages/Consultation";
 import SlotBook from "./pages/SlotBook";
 import UserDetails from "./pages/UserDetails";
 import Login from "./pages/Login";
+import Verify from "./pages/Verify";
 
 const App = () => {
   return (
@@ -36,6 +37,7 @@ const App = () => {
         <Route path="/book-slot" element={<SlotBook />} />
         <Route path="/user-details" element={<UserDetails />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/verify" element={<Verify />} />
       </Routes>
       <Footer />
     </div>

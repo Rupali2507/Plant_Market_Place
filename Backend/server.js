@@ -9,6 +9,7 @@ import connectCloudinary from "./config/cloudinary.js";
 import userRouter from "./routes/userRoute.js";
 import productRouter from "./routes/ProductRoute.js";
 import CartRouter from "./routes/CartRouter.js";
+import OrderRouter from "./routes/OrderRoutes.js";
 const app = express();
 const PORT = process.env.PORT || 4000;
 
@@ -26,6 +27,7 @@ app.get("/", (req, res) => {
 app.use("/api/user", userRouter);
 app.use("/api/product", productRouter);
 app.use("/api/cart", CartRouter);
+app.use("/api/order", OrderRouter);
 
 connectDB();
 connectCloudinary()

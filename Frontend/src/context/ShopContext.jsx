@@ -7,8 +7,8 @@ import { toast } from "react-toastify";
 export const ShopContext = createContext();
 
 const ShopContextProvider = (props) => {
-  const currency = "$";
-  const delivery_fee = 10;
+  const currency = "$"; //currency
+  const delivery_fee = 10; //delivery fee
   const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
   const [products, setProducts] = useState([]);
@@ -31,7 +31,6 @@ const ShopContextProvider = (props) => {
 
       if (response.data.success) {
         setProducts(response.data.products);
-        console.log("Fetched products:", response.data.products);
       } else {
         toast.error(response.data.message);
       }
@@ -96,6 +95,7 @@ const ShopContextProvider = (props) => {
   };
 
   const updateQuantity = async (itemId, quantity) => {
+    console.log(cartItem);
     let cartData = structuredClone(cartItem);
 
     if (quantity === 0) {
@@ -103,7 +103,7 @@ const ShopContextProvider = (props) => {
     } else {
       cartData[itemId] = quantity;
     }
-
+    console.log(cartData);
     setCartItem(cartData);
     if (token) {
       try {
